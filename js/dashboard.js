@@ -13,7 +13,7 @@ async function fetchDashboardData() {
     fetch("data/Teacher_rows.json").then(r => r.json()),
     fetch("data/Student_rows.json").then(r => r.json()),
     fetch("data/Class_rows.json").then(r => r.json()),
-    fetch("data/Lessons_rows.json").then(r => r.json()),
+    fetch("data/Lesson_rows.json").then(r => r.json()),
     fetch("data/Lesson_schedule_rows.json").then(r => r.json())
   ]);
 
@@ -62,4 +62,5 @@ async function initDashboard() {
 }
 
 initDashboard();
+
 
