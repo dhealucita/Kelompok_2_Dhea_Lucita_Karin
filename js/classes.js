@@ -12,7 +12,7 @@ Promise.all([
 ]).then(([classes, schedules, teachers, lessons]) => {
 
   const teacherById = Object.fromEntries(teachers.map(t => [t.id, t]));
-  const lessonById  = Object.fromEntries(lessons.map(l => [l.id, l]));
+  const lessonById  = Object.fromEntries(lessons.map(l => [l.subject_id, l]));
 
   // JOIN DATA → FLAT TABLE
   originalData = [];
@@ -22,7 +22,7 @@ Promise.all([
       .forEach(s => {
         originalData.push({
           class: c.name,
-          lesson: lessonById[s.lessons_id]?.subject || '-',
+          lesson: lessonById[s.teacher_id]?.subject || '-',
           teacher: teacherById[s.teacher_id]?.name || '-'
         });
       });
