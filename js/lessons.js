@@ -19,7 +19,7 @@ Promise.all([
   originalData = [];
   lessons.forEach(l => {
     schedules
-      .filter(s => s.lessons_id === l.subject_id)
+      .filter(s => s.teacher_id === l.subject_id)
       .forEach(s => {
         originalData.push({
           lesson: l.subject,
