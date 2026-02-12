@@ -15,7 +15,7 @@ Promise.all([
 
   // JOIN DATA → FLAT TABLE
   filteredData = [];
-  teachers.forEach(t => { console.log(t.id) , console.log(t.name)
+  teachers.forEach(t => {
     schedules
       .filter(s => s.teacher_id === t.id)
       .forEach(s => { 
@@ -77,6 +77,7 @@ document.getElementById('nextBtn').onclick = () => {
     renderTable();
   }
 };
+
 
 
 
