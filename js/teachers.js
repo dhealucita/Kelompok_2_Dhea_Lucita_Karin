@@ -18,7 +18,7 @@ Promise.all([
   teachers.forEach(t => {
     schedules
       .filter(s => s.teacher_id === t.id)
-      .forEach(s => {
+      .forEach(s => { console.log(s.teacher_id) , console.log(s.subject)
         filteredData.push({
           nip: t.nip,
           teacher: t.name,
@@ -77,5 +77,6 @@ document.getElementById('nextBtn').onclick = () => {
     renderTable();
   }
 };
+
 
 
