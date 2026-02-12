@@ -14,7 +14,7 @@ Promise.all([
   const lessonById  = Object.fromEntries(lessons.map(l => [l.subject_id, l]));
   const classById   = Object.fromEntries(classes.map(c => [c.id, c]));
 
-  allData = schedules.map(s => ({
+  allData = schedules.map(s => ({ console.log(s.teacher_id) , console.log(s.subject)
     day: s.day,
     time: `${formatTime(s.time_start)} – ${formatTime(s.time_end)}`,
     lesson: lessonById[s.teacher_id]?.subject || '-',
