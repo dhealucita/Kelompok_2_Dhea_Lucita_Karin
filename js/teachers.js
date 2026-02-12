@@ -10,7 +10,7 @@ Promise.all([
   fetch('./data/Class_rows.json').then(r=>r.json())
 ]).then(([teachers, schedules, lessons, classes]) => {
 
-  const lessonById = Object.fromEntries(lessons.map(l => [l.id, l]));
+  const lessonById = Object.fromEntries(lessons.map(l => [l.subject_id, l]));
   const classById  = Object.fromEntries(classes.map(c => [c.id, c]));
 
   // JOIN DATA → FLAT TABLE
@@ -22,7 +22,7 @@ Promise.all([
         filteredData.push({
           nip: t.nip,
           teacher: t.name,
-          lesson: lessonById[s.lessons_id]?.subject || '-',
+          lesson: lessonById[s.teacher_id]?.subject || '-',
           class: classById[s.class_id]?.name || '-'
         });
       });
@@ -77,4 +77,5 @@ document.getElementById('nextBtn').onclick = () => {
     renderTable();
   }
 };
+
 
